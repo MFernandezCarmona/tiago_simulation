@@ -9,6 +9,10 @@
   <arg name="multi" default=""/>
   <arg name="model_name" default="tiago"/>
   <arg name="file_suffix" value="$(eval ('no-arm' if not arm else end_effector+ ('' if not ft_sensor else '_'+ft_sensor)))"/>
+  <arg name="has_rfid"  default="false"/>
+  <arg name="has_thermal_camera"  default="false"/>
+  <arg name="has_sonars"  default="true"/>
+
   <rosparam ns="pal_robot_info" param="type">"tiago"</rosparam>
 
   <!-- PID gains -->
@@ -29,6 +33,9 @@
     <arg name="laser_model" value="$(arg laser_model)"/>
     <arg name="camera_model" value="$(arg camera_model)"/>
     <arg name="multi"  value="$(arg multi)"/>
+    <arg name="has_rfid"  value="$(arg has_rfid)"/>
+    <arg name="has_thermal_camera"  value="$(arg has_thermal_camera)"/>
+    <arg name="has_sonars"  value="$(arg has_sonars)"/>
   </include>
 
   <!-- Spawn robot in Gazebo -->
